@@ -9,7 +9,7 @@ echo '
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/iDiscuss">Home</a>
                 </li>
@@ -21,7 +21,7 @@ echo '
                         Topics
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="/iDiscuss/threadlist.php">Thread List</a></li>
                         <li><a class="dropdown-item" href="#">Another action</a></li>
                         <li>
                             <hr class="dropdown-divider">
@@ -37,9 +37,9 @@ echo '
                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                  <button class="btn btn-success" type="submit">Search</button>
              </form>
-            <div class="mx-2">
-                <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-                <button class="btn btn-outline-warning " data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button>
+            <div class="mx-2 py-2 d-flex align-items-center justify-content-around">
+                <button class="btn btn-outline-danger mx-1" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                <button class="btn btn-outline-warning mx-1 " data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button>
             </div>
         </div>
     </div>
