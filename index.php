@@ -15,45 +15,30 @@
     <div class="container my-3">
         <h2 class="text-center my-5">iDiscuss : Browse Categories</h2>
         <div class="row">
-            <!-- Use a PHP for loop to retrive categories data from the database -->
+            <!-- Fetch all categories from the Database and Use a loop to iterate through the result set-->
             <?php
+            $sql = "SELECT * FROM `categories`;";
+            $result = mysqli_query($conn, $sql);
+            while ($row = mysqli_fetch_assoc($result)) {
+                $cat = $row['category_name'];
+                $desc = $row['category_description'];
+                echo '
+                <div class="col-md-4 my-2">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://source.unsplash.com/500x400/?' . $cat . ' ,coding ,programming, computer"  class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">' . $cat . '</h5>
+                        <p class="card-text">' .substr($desc, 0 , 200). '</p>
+                        <a href="#" class="btn btn-primary">View Threads</a>
+                    </div>
+                </div>
+            </div> ';
+            }
+
 
 
 
             ?>
-
-            <div class="col-md-4 my-2">
-                <div class="card" style="width: 18rem;">
-                    <img src="/iDiscuss/images/python.png" height="235" width="180" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">View Threads</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-md-4 my-2">
-                <div class="card" style="width: 18rem;">
-                    <img src="/iDiscuss/images/js.png" height="235" width="180" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">View Threads</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 my-2">
-                <div class="card" style="width: 18rem;">
-                    <img src="/iDiscuss/images/cpp.png" height="235" width="180" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">View Threads</a>
-                    </div>
-                </div>
-            </div>
 
         </div>
     </div>
