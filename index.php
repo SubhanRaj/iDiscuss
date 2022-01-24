@@ -28,7 +28,7 @@
                     <img src="https://source.unsplash.com/500x400/?' . $cat . ' ,coding ,programming, computer"  class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">' . $cat . '</h5>
-                        <p class="card-text">' .substr($desc, 0 , 200). '</p>
+                        <p class="card-text">' .substr($desc, 0 , 180). '...</p>
                         <a href="#" class="btn btn-primary">View Threads</a>
                     </div>
                 </div>
