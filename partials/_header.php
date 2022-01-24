@@ -38,12 +38,12 @@ echo '
                  <button class="btn btn-success" type="submit">Search</button>
              </form>
             <div class="mx-2">
-                <button class="btn btn-outline-danger">Login</button>
-                <button class="btn btn-outline-warning">Sign Up</button>
+                <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                <button class="btn btn-outline-warning " data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button>
             </div>
         </div>
     </div>
 </nav>
 ';
-
-?>
+include 'partials/_loginModal.php';
+include 'partials/_signupModal.php';
