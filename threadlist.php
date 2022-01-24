@@ -9,11 +9,27 @@
 <body>
     <!-- Header -->
     <?php require 'partials/_header.php'; ?>
+    <?php require 'partials/_dbconnect.php'; ?>
+    <!-- PHP for page content -->
+
+    <?php
+
+    $id = $_GET['catid'];
+    $sql = "SELECT * FROM `categories` WHERE `category_id` = $id;";
+    $result = mysqli_query($conn, $sql);
+    while ($row = mysqli_fetch_assoc($result)) {
+        $catname = $row['category_name'];
+        $catdesc = $row['category_description'];
+        $caturl = $row['category_url'];
+    }
+
+
+    ?>
 
     <div class="container my-4">
         <div class="jumbotron bg-light p-5 rounded-lg m-3">
-            <h1 class="display-4">Welcome to Python Forums</h1>
-            <p class="lead">Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with dynamic typing and dynamic binding,make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together.</p>
+            <h1 class="display-4">Welcome to <?php echo $catname; ?> Forums</h1>
+            <p class="lead"><?php echo $catdesc; ?> </p>
             <hr class="my-4">
             <p>This is a Peer to Peer forum for sharing knowledge with each other.</p>
             <div class="d-flex align-items-center justify-content-between">
@@ -40,7 +56,7 @@
                     </ul>
                 </div>
                 <div class="my-2">
-                    <a class=" btn btn-info" href="https://www.python.org/" target="_blank" role="button">More about Python</a>
+                    <a class=" btn btn-info" href="<?php echo $caturl; ?>" target="_blank" role="button">More about <?php echo $catname; ?></a>
                 </div>
             </div>
         </div>
