@@ -14,7 +14,7 @@ echo '
                     <a class="nav-link active" aria-current="page" href="/iDiscuss">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://masterofcosmos.com" target = "_blank">About Dev</a>
+                    <a class="nav-link" href="/iDiscuss/about.php">About</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -28,6 +28,9 @@ echo '
                         </li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://masterofcosmos.com" target = "_blank">Connect With Me</a>
                 </li>
             </ul>
              <form class="d-flex">
