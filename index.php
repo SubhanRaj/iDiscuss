@@ -21,12 +21,10 @@
                     <img src="/iDiscuss/images/slider/slideshow1.jpg" height="700px" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="/iDiscuss/images/slider/slideshow2.jpg" height="700px"
-                        class="d-block w-100" alt="...">
+                    <img src="/iDiscuss/images/slider/slideshow2.jpg" height="700px" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="/iDiscuss/images/slider/slideshow3.jpg" height="700px"
-                        class="d-block w-100" alt="...">
+                    <img src="/iDiscuss/images/slider/slideshow3.jpg" height="700px" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -82,7 +80,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 
@@ -90,9 +88,8 @@
 
     </div>
 
+    <!-- Footer -->
+    <?php require 'partials/_footer.php'; ?>
+</body>
 
-
-
-
-
-
+</html>
