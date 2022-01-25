@@ -93,7 +93,7 @@
                     <div class="d-flex border p-3 my-3">
                         <img src="/iDiscuss/images/default-user.png" class="flex-shrink-0 me-3 mt-3 rounded-circle" width="64px" height="64px" alt="">
                         <div>
-                            <h5 class="mt-0"><a class = "text-dark text-decoration-none" href="/iDiscuss/thread.php">' . $thread_ques . '</a></h5>
+                            <h5 class="mt-0"><a class = "text-dark text-decoration-none" href="/iDiscuss/thread.php?threadid='.$id.'">' . $thread_ques . '</a></h5>
                             <p>' . $thread_desc . '</p>
                         </div>
                      </div>
