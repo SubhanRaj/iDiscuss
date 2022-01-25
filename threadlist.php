@@ -47,7 +47,6 @@
         $th_desc = $_POST['thread_desc'];
         $sql = "INSERT INTO `threads` ( `thread_title`, `thread_desc`, `thread_cat_id`, `thread_user_id`) VALUES ('$th_title', '$th_desc', '$id', '0');";
         $result = mysqli_query($conn, $sql);
-        echo $sql;
         $showAlert = true;
         if ($showAlert) {
             echo '
