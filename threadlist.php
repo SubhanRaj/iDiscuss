@@ -47,6 +47,7 @@
         $th_desc = $_POST['thread_desc'];
         $sql = "INSERT INTO `threads` ( `thread_title`, `thread_desc`, `thread_cat_id`, `thread_user_id`) VALUES ('$th_title', '$th_desc', '$id', '0');";
         $result = mysqli_query($conn, $sql);
+        echo $sql;
         $showAlert = true;
         if ($showAlert) {
             echo '
@@ -102,13 +103,12 @@
                 <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="POST">
                     <div class="mb-3">
                         <label for="thread_title" class="form-label">Ask your question</label>
-                        <input type="text" class="form-control" id="thread_title" name="thread_title"
-                            aria-describedby="emailHelp">
+                        <input type="text" class="form-control" id="thread_title" name="thread_title" aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text">Keep your question short and accurate</div>
                     </div>
-                    <div class=" mb-3 form-group">
+                    <div class="mb-3">
                         <label for="thread_desc">Describe the question</label>
-                        <textarea name="" id="thread_desc" name="thread_desc" rows="10" class="form-control"></textarea>
+                        <textarea name="thread_desc" id="thread_desc" rows="10" class="form-control"></textarea>
                     </div>
                     <button type="submit" class="btn btn-success">Submit</button>
                 </form>
