@@ -36,7 +36,6 @@
             $threaddesc = $row['thread_desc'];
         }
         if ($noResult) {
-            echo var_dump($noResult);
                         echo '
                 <div class="container my-4">
                      <div class="jumbotron bg-light p-5 rounded-lg m-3">
