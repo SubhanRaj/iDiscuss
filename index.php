@@ -13,7 +13,7 @@
     <?php require 'partials/_slideshow.php'; ?>
     <!-- Category container -->
     <div class="container my-3">
-        <h2 class="text-center my-5">iDiscuss : Browse Categories</h2>
+        <h2 class="text-center my-5">iDiscuss</h2>
         <div class="row">
             <!-- Fetch all categories from the Database and Use a loop to iterate through the result set-->
             <?php
@@ -26,7 +26,7 @@
                 echo '
                 <div class="col-md-4 my-2">
                 <div class="card" style="width: 18rem;">
-                    <img src="/iDiscuss/images/card/card-'.$id.'.png" height = "286" width = "286" class="card-img-top" alt="...">
+                    <a href="/iDiscuss/threadlist.php?catid=' . $id . '"><img src="/iDiscuss/images/card/card-'.$id. '.png" height = "286" width = "286" class="card-img-top" alt="..."></a>
                     <div class="card-body">
                         <h5 class="card-title">' . $cat . '</h5>
                         <p class="card-text">' .substr($desc, 0 , 180). '...</p>
