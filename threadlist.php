@@ -75,7 +75,7 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container vh-100">
             <h1 class="py-3">Browse Questions</h1>
             <!-- Fetching data from DB -->
 
