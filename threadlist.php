@@ -3,7 +3,20 @@
 
 <head>
     <?php require 'partials/_head.php'; ?>
-    <title>iDiscuss : Template</title>
+    <?php require 'partials/_dbconnect.php'; ?>
+
+    <?php
+    $id = $_GET['catid'];
+    $sql = "SELECT * FROM `categories` WHERE `category_id` = $id;";
+    $result = mysqli_query($conn, $sql);
+    while ($row = mysqli_fetch_assoc($result)) {
+        $catname = $row['category_name'];
+        echo "
+        <title>iDiscuss $catname Forum</title>
+        ";
+    }
+    ?>
+
 </head>
 
 <body>
@@ -28,7 +41,7 @@
 
     <div class="container my-4">
         <div class="jumbotron bg-light p-5 rounded-lg m-3">
-            <h1 class="display-4">Welcome to <?php echo $catname; ?> Forums</h1>
+            <h1 class="display-5">Welcome to <?php echo $catname; ?> Forums</h1>
             <p class="lead"><?php echo $catdesc; ?> </p>
             <hr class="my-4">
             <p>This is a Peer to Peer forum for sharing knowledge with each other.</p>
@@ -56,56 +69,39 @@
                     </ul>
                 </div>
                 <div class="my-2">
-                    <a class=" btn btn-info" href="<?php echo $caturl; ?>" target="_blank" role="button">More about <?php echo $catname; ?></a>
+                    <a class=" btn btn-success" href="<?php echo $caturl; ?>" target="_blank" role="button">More about
+                        <?php echo $catname; ?></a>
                 </div>
             </div>
         </div>
 
         <div class="container">
             <h1 class="py-3">Browse Questions</h1>
-            <div class="d-flex border p-3 my-3">
-                <img src="/iDiscuss/images/default-user.png" class="flex-shrink-0 me-3 mt-3 rounded-circle" width="64px" height="64px" alt="...">
-                <div>
-                    <h5 class="mt-0">Unable to add Python to path</h5>
-                    <p>I'm trying to Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, assumenda ratione? Quod vitae magni sequi..</p>
-                    <p>but it always results in Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero vel odit quasi ullam ea hic voluptates, optio quibusdam voluptatem adipisci molestiae, rerum earum aut voluptate?</p>
-                </div>
-            </div>
-            <div class="d-flex border p-3 my-3">
-                <img src="/iDiscuss/images/default-user.png" class="flex-shrink-0 me-3 mt-3 rounded-circle" width="64px" height="64px" alt="...">
-                <div>
-                    <h5 class="mt-0">Unable to add Python to path</h5>
-                    <p>I'm trying to Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, assumenda ratione? Quod vitae magni sequi..</p>
-                    <p>but it always results in Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero vel odit quasi ullam ea hic voluptates, optio quibusdam voluptatem adipisci molestiae, rerum earum aut voluptate?</p>
-                </div>
-            </div>
-            <div class="d-flex border p-3 my-3">
-                <img src="/iDiscuss/images/default-user.png" class="flex-shrink-0 me-3 mt-3 rounded-circle" width="64px" height="64px" alt="...">
-                <div>
-                    <h5 class="mt-0">Unable to add Python to path</h5>
-                    <p>I'm trying to Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, assumenda ratione? Quod vitae magni sequi..</p>
-                    <p>but it always results in Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero vel odit quasi ullam ea hic voluptates, optio quibusdam voluptatem adipisci molestiae, rerum earum aut voluptate?</p>
-                </div>
-            </div>
-            <div class="d-flex border p-3 my-3">
-                <img src="/iDiscuss/images/default-user.png" class="flex-shrink-0 me-3 mt-3 rounded-circle" width="64px" height="64px" alt="...">
-                <div>
-                    <h5 class="mt-0">Unable to add Python to path</h5>
-                    <p>I'm trying to Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, assumenda ratione? Quod vitae magni sequi..</p>
-                    <p>but it always results in Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero vel odit quasi ullam ea hic voluptates, optio quibusdam voluptatem adipisci molestiae, rerum earum aut voluptate?</p>
-                </div>
-            </div>
-            <div class="d-flex border p-3 my-3">
-                <img src="/iDiscuss/images/default-user.png" class="flex-shrink-0 me-3 mt-3 rounded-circle" width="64px" height="64px" alt="...">
-                <div>
-                    <h5 class="mt-0">Unable to add Python to path</h5>
-                    <p>I'm trying to Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, assumenda ratione? Quod vitae magni sequi..</p>
-                    <p>but it always results in Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero vel odit quasi ullam ea hic voluptates, optio quibusdam voluptatem adipisci molestiae, rerum earum aut voluptate?</p>
-                </div>
-            </div>
+            <!-- Fetching data from DB -->
+
+            <?php
+            $id = $_GET['catid'];
+
+            $sql = "SELECT * FROM `threads` WHERE `thread_cat_id` = $id;";
+            $result = mysqli_query($conn, $sql);
+            while ($row = mysqli_fetch_assoc($result)) {
+                $id = $row['thread_id'];
+                $thread_ques = $row['thread_title'];
+                $thread_desc = $row['thread_desc'];
+
+                echo '
+                    <div class="d-flex border p-3 my-3">
+                        <img src="/iDiscuss/images/default-user.png" class="flex-shrink-0 me-3 mt-3 rounded-circle" width="64px" height="64px" alt="">
+                        <div>
+                            <h5 class="mt-0"><a class = "text-dark text-decoration-none" href="/iDiscuss/thread.php">' . $thread_ques . '</a></h5>
+                            <p>' . $thread_desc . '</p>
+                        </div>
+                     </div>
+                ';
+            }
+
+            ?>
         </div>
-
-
     </div>
 
 
