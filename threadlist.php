@@ -35,7 +35,28 @@
         $catdesc = $row['category_description'];
         $caturl = $row['category_url'];
     }
+    ?>
 
+    <?php
+    $showAlert = false;
+    $method = $_SERVER['REQUEST_METHOD'];
+    if ($method == 'POST') {
+        // Insert the thread in to the db
+
+        $th_title = $_POST['thread_title'];
+        $th_desc = $_POST['thread_desc'];
+        $sql = "INSERT INTO `threads` (`thread_id`, `thread_title`, `thread_desc`, `thread_cat_id`, `thread_user_id`) VALUES ('$th_title', '$th_desc', '$id', '0');";
+        $result = mysqli_query($conn, $sql);
+        $showAlert = true;
+        if ($showAlert) {
+            echo '
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success! </strong>' . $th_title . ' Created Sucessfully
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            ';
+        }
+    }
 
     ?>
 
@@ -78,10 +99,11 @@
         <div class="container">
             <div class="container">
                 <h1 class="py-3">Start Discussion</h1>
-                <form>
+                <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="POST">
                     <div class="mb-3">
                         <label for="thread_title" class="form-label">Ask your question</label>
-                        <input type="text" class="form-control" id="thread_title" name="thread_title" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" id="thread_title" name="thread_title"
+                            aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text">Keep your question short and accurate</div>
                     </div>
                     <div class=" mb-3 form-group">
