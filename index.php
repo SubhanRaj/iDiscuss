@@ -13,7 +13,7 @@
     <?php require 'partials/_slideshow.php'; ?>
     <!-- Category container -->
     <div class="container my-3">
-        <h2 class="text-center my-5">iDiscuss : Browse Categories</h2>
+        <h2 class="text-center my-5">iDiscuss</h2>
         <div class="row">
             <!-- Fetch all categories from the Database and Use a loop to iterate through the result set-->
             <?php
