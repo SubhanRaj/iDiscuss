@@ -24,7 +24,7 @@
                 $cat = $row['category_name'];
                 $desc = $row['category_description'];
                 echo '
-                <div class="col-md-4 my-2">
+                <div class=" d-flex justify-content-center col-md-4 my-2">
                 <div class="card" style="width: 18rem;">
                     <a href="/iDiscuss/threadlist.php?catid=' . $id . '"><img src="/iDiscuss/images/card/card-'.$id. '.png" height = "286" width = "286" class="card-img-top" alt="..."></a>
                     <div class="card-body">
