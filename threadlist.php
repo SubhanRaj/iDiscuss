@@ -102,34 +102,34 @@
                 <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="POST">
                     <div class="mb-3">
                         <label for="thread_title" class="form-label">Ask your question</label>
-                        <input type="text" class="form-control" id="thread_title" name="thread_title"
-                            aria-describedby="emailHelp">
+                        <input type="text" class="form-control" id="thread_title" name="thread_title" aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text">Keep your question short and accurate</div>
                     </div>
-                    <div class=" mb-3 form-group">
+                    <div class="mb-3">
                         <label for="thread_desc">Describe the question</label>
-                        <textarea name="" id="thread_desc" name="thread_desc" rows="10" class="form-control"></textarea>
+                        <textarea name="thread_desc" id="thread_desc" rows="10" class="form-control"></textarea>
                     </div>
                     <button type="submit" class="btn btn-success">Submit</button>
                 </form>
 
             </div>
-            <h1 class="py-3">Browse Questions</h1>
-            <!-- Fetching data from DB -->
+            <div class="container vh-100">
+                <h1 class="py-3">Browse Questions</h1>
+                <!-- Fetching data from DB -->
 
-            <?php
-            $id = $_GET['catid'];
+                <?php
+                $id = $_GET['catid'];
 
-            $sql = "SELECT * FROM `threads` WHERE `thread_cat_id` = $id;";
-            $result = mysqli_query($conn, $sql);
-            $noResult = true;
-            while ($row = mysqli_fetch_assoc($result)) {
-                $noResult = false;
-                $id = $row['thread_id'];
-                $thread_ques = $row['thread_title'];
-                $thread_desc = $row['thread_desc'];
+                $sql = "SELECT * FROM `threads` WHERE `thread_cat_id` = $id;";
+                $result = mysqli_query($conn, $sql);
+                $noResult = true;
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $noResult = false;
+                    $id = $row['thread_id'];
+                    $thread_ques = $row['thread_title'];
+                    $thread_desc = $row['thread_desc'];
 
-                echo '
+                    echo '
                     <div class="d-flex border p-3 my-3">
                         <img src="/iDiscuss/images/default-user.png" class="flex-shrink-0 me-3 mt-3 rounded-circle" width="64px" height="64px" alt="">
                         <div>
@@ -138,9 +138,9 @@
                         </div>
                      </div>
                 ';
-            }
-            if ($noResult) {
-                echo '
+                }
+                if ($noResult) {
+                    echo '
                 <div class="container my-4">
                      <div class="jumbotron bg-light p-5 rounded-lg m-3">
                         <h5 class="mt-0">No Threads</h5>
@@ -148,9 +148,10 @@
                     </div>
                 </div>
                 ';
-            }
+                }
 
-            ?>
+                ?>
+            </div>
         </div>
     </div>
 

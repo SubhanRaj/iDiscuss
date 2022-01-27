@@ -1,5 +1,5 @@
-<div class="container-fluid bg-dark text-light">
-    <p class="text-center  mb-0">
+<div class="container-fluid bg-dark text-light ">
+    <p class="text-center p-3  mb-0">
         &COPY; 2077 || iDiscuss : A PHP Forum
     </p>
 </div>
