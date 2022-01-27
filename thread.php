@@ -36,7 +36,7 @@
             $threaddesc = $row['thread_desc'];
         }
         if ($noResult) {
-                        echo '
+            echo '
                 <div class="container my-4">
                      <div class="jumbotron bg-light p-5 rounded-lg m-3">
                         <h5 class="mt-0">No Threads</h5>
@@ -46,6 +46,7 @@
                 ';
         }
         ?>
+        <!-- Listing Thread with Thread title and description -->
         <div class="container my-4 ">
             <div class="jumbotron bg-light p-5 rounded-lg m-3">
                 <h1 class="display-5"> <?php echo $threadname; ?></h1>
@@ -55,11 +56,8 @@
             </div>
         </div>
 
-        <div class="container my-4 ">
+        <div class="container my-4">
             <h1 class="py-3">Discussion</h1>
-
-
-
         </div>
     </div>
 
