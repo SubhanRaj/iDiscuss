@@ -113,12 +113,14 @@
                 $noResult = false;
                 $id = $row['comment_id'];
                 $content = $row['comment_content'];
+                $time= $row['comment_time'];
 
                 echo '
                     <div class="d-flex border p-3 my-3">
                         <img src="/iDiscuss/images/default-user.png" class="flex-shrink-0 me-3 mt-3 rounded-circle" width="64px" height="64px" alt="">
                         <div>
-                            <p>' . $content . '</p>
+                        <h5 class = "my-0 ">By: Subhan at ' . $time . '</h5>
+                            ' . $content . '
                         </div>
                      </div>
                 ';
