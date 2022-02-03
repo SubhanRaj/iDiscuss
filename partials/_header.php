@@ -54,4 +54,16 @@ if (isset($_GET['signupSuccess']) && $_GET['signupSuccess'] == "true") {
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
 }
+if (isset($_GET['loggedin']) && $_GET['loggedin'] == "true") {
+    echo '<div class="alert alert-success alert-dismissible fade show my-0" role="alert">
+            <strong>Success!</strong> You logged in Successfully
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+}
+else{
+    echo '<div class="alert alert-danger alert-dismissible fade show my-0" role="alert">
+            <strong>Login Failed!</strong> Incorrect Username or Password
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+}
 ?>
