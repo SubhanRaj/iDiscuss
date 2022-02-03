@@ -60,10 +60,5 @@ if (isset($_GET['loggedin']) && $_GET['loggedin'] == "true") {
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
 }
-else{
-    echo '<div class="alert alert-danger alert-dismissible fade show my-0" role="alert">
-            <strong>Login Failed!</strong> Incorrect Username or Password
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>';
-}
+
 ?>
