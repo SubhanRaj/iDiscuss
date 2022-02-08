@@ -29,6 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         
     }
+    // Show error with inserted SQl query for 10 seconds and then redirect to index.php
+    else {
+        $showError = "true";
+        header("Refresh: 5; url=/iDiscuss/index.php");
+    }
     header("Location: /iDiscuss/index.php");  
 }
 // else {
