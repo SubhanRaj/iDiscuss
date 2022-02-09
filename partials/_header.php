@@ -30,7 +30,10 @@ echo '
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://masterofcosmos.com" target = "_blank">Connect With Me</a>
+                    <a class="nav-link" href="https://masterofcosmos.com" target = "_blank">Contact Me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/iNotes" target = "_blank">Take Notes</a>
                 </li>
             </ul>
              <form class="d-flex">
