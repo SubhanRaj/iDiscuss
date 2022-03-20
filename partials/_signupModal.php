@@ -15,11 +15,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="signupPassword" name="signupPassword">
+                        <input type="password" class="form-control" id="Password" name="Password">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" id="signupcPassword" name="signupcPassword">
+                        <input type="password" class="form-control" id="cPassword" name="cPassword">
                         <div id=" emailHelp" class="form-text">Make sure to enter the same password
                         </div>
                     </div>
