@@ -14,7 +14,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="loginPassword" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="loginPassword" name="loginPassword"><i class="bi bi-eye-slash" id="togglePassword"></i>
+                        <input type="password" class="form-control" id="loginPass" name="loginPass"><i class="bi bi-eye-slash" id="togglePassword"></i>
 
                     </div>
                 </div>
