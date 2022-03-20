@@ -95,11 +95,14 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="container">
                 <h1 class="py-3">Start Discussion</h1>
-                <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="POST">
+                <?php
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == TRUE) {
+                    echo '
+            
+                <form action="' . $_SERVER["REQUEST_URI"] . '" method="POST">
                     <div class="mb-3">
                         <label for="thread_title" class="form-label">Ask your question</label>
                         <input type="text" class="form-control" id="thread_title" name="thread_title" aria-describedby="emailHelp">
@@ -111,25 +114,35 @@
                     </div>
                     <button type="submit" class="btn btn-success">Submit</button>
                 </form>
-
             </div>
-            <div class="container vh-100">
-                <h1 class="py-3">Browse Questions</h1>
-                <!-- Fetching data from DB -->
-
-                <?php
-                $id = $_GET['catid'];
-
-                $sql = "SELECT * FROM `threads` WHERE `thread_cat_id` = $id;";
-                $result = mysqli_query($conn, $sql);
-                $noResult = true;
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $noResult = false;
-                    $id = $row['thread_id'];
-                    $thread_ques = $row['thread_title'];
-                    $thread_desc = $row['thread_desc'];
-                    $time = $row['timestamp'];
+        ';
+                } else {
                     echo '
+            <div class=" container text-center">
+            <p class ="lead">You need to be login, in order to ask questions </p>
+            </div>
+            
+            ';
+                }
+
+                ?>
+                <div class="container vh-100">
+                    <h1 class="py-3">Browse Questions</h1>
+                    <!-- Fetching data from DB -->
+
+                    <?php
+                    $id = $_GET['catid'];
+
+                    $sql = "SELECT * FROM `threads` WHERE `thread_cat_id` = $id;";
+                    $result = mysqli_query($conn, $sql);
+                    $noResult = true;
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $noResult = false;
+                        $id = $row['thread_id'];
+                        $thread_ques = $row['thread_title'];
+                        $thread_desc = $row['thread_desc'];
+                        $time = $row['timestamp'];
+                        echo '
                     <div class="d-flex border p-3 my-3">
                         <img src="/iDiscuss/images/default-user.png" class="flex-shrink-0 me-3 mt-3 rounded-circle" width="64px" height="64px" alt="">
                         <div>
@@ -139,9 +152,9 @@
                         </div>
                      </div>
                 ';
-                }
-                if ($noResult) {
-                    echo '
+                    }
+                    if ($noResult) {
+                        echo '
                 <div class="container my-4">
                      <div class="jumbotron bg-light p-5 rounded-lg m-3">
                         <h5 class="mt-0">No Threads</h5>
@@ -149,16 +162,16 @@
                     </div>
                 </div>
                 ';
-                }
+                    }
 
-                ?>
+                    ?>
+                </div>
             </div>
         </div>
-    </div>
 
 
-    <!-- Footer -->
-    <?php require 'partials/_footer.php'; ?>
+        <!-- Footer -->
+        <?php require 'partials/_footer.php'; ?>
 </body>
 
 </html>

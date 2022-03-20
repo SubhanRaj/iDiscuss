@@ -91,13 +91,23 @@
         <!-- Form for comment -->
         <div class="container my-4">
             <h1 class="py-3">Add comments</h1>
-            <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="POST">
-                <div class="mb-3">
-                    <label for="content">Write Your Comment</label>
-                    <textarea name="content" id="content" rows="5" class="form-control"></textarea>
-                </div>
-                <button type="submit" class="btn btn-success">Comment</button>
-            </form>
+            <?php
+            if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == TRUE){
+                echo '
+                    <form action="'.$_SERVER['REQUEST_URI'].'" method="POST">
+                    <div class="mb-3">
+                        <label for="content">Write Your Comment</label>
+                        <textarea name="content" id="content" rows="5" class="form-control"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">Comment</button>
+                    </form>';
+            }
+            else{
+                echo '
+                    <p class = "lead">Please login in order to add comments  </p>
+                    ';
+            }
+            ?>
         </div>
 
         <!-- Listing All Comments -->
