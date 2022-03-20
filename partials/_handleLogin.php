@@ -27,12 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     // Show error for 5 seconds and then redirect to index.php
     else {
-        $showError = "true";
+        $showError = "Invalid username or password";
+        echo $showError;
         header("Refresh: 5; url=/iDiscuss/index.php");
     }
     header("Location: /iDiscuss/index.php");  
 }
-else {
-    $showError = "Invalid username or password";
-    echo $showError;
-}
+
+?>
