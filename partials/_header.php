@@ -40,7 +40,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == TRUE) {
         <form class="d-flex">
                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                  <button class="btn btn-success" type="submit">Search</button>
-                 <p class = "text-light my-0 mx-2 align-center">Welcome ' . $_SESSION['useremail'] . '</p>
+                 <p class = "text-light my-0 mx-2 align-center">Welcome ' . $_SESSION['username'] . '</p>
                  <a href = "/iDiscuss/partials/_logout.php" class="btn btn-outline-success mx-1 py-2">Logout</a>
         </form>';
 } else {

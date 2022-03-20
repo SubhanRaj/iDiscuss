@@ -9,12 +9,13 @@
             <form action="/iDiscuss/partials/_handleLogin.php" method="POST">
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="loginEmail" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="loginEmail" name="loginEmail" aria-describedby="emailHelp">
+                        <label for="userName" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="userName" name="userName">
                     </div>
                     <div class="mb-3">
                         <label for="loginPassword" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="loginPass" name="loginPass"><i class="bi bi-eye-slash" id="togglePassword"></i>
+                        <input type="password" class="form-control" id="loginPass" name="loginPass"><i
+                            class="bi bi-eye-slash" id="togglePassword"></i>
 
                     </div>
                 </div>
@@ -27,22 +28,22 @@
     </div>
 </div>
 <script>
-    const togglePassword = document
-        .querySelector('#togglePassword');
+const togglePassword = document
+    .querySelector('#togglePassword');
 
-    const password = document.querySelector('#loginPassword');
+const password = document.querySelector('#loginPassword');
 
-    togglePassword.addEventListener('click', () => {
+togglePassword.addEventListener('click', () => {
 
-        // Toggle the type attribute using
-        // getAttribure() method
-        const type = password
-            .getAttribute('type') === 'password' ?
-            'text' : 'password';
+    // Toggle the type attribute using
+    // getAttribure() method
+    const type = password
+        .getAttribute('type') === 'password' ?
+        'text' : 'password';
 
-        password.setAttribute('type', type);
+    password.setAttribute('type', type);
 
-        // Toggle the eye and bi-eye icon
-        this.classList.toggle('bi-eye');
-    });
+    // Toggle the eye and bi-eye icon
+    this.classList.toggle('bi-eye');
+});
 </script>

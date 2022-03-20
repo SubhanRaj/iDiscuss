@@ -5,9 +5,9 @@ $showError = "false";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include '_dbconnect.php';
-    $email = $_POST['loginEmail'];
+    $userName = $_POST['userName'];
     $pass  = $_POST['loginPass'];
-    $sql = "SELECT * FROM `users` WHERE `userEmail` = '$email'";
+    $sql = "SELECT * FROM `users` WHERE `userName` = '$userName'";
     $result = mysqli_query($conn, $sql);
     
     $numRows = mysqli_num_rows($result);
@@ -16,8 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($pass, $row['userPass'])) {
             session_start();
             $_SESSION['loggedin'] = true;
-            $_SESSION['useremail'] = $email;
-            echo "logged in" . $email;
+            $_SESSION['username'] = $userName;
+            echo "logged in" . $userName;
             header("Location: /iDiscuss/index.php");
         }
         else {

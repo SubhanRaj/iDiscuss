@@ -9,9 +9,12 @@
             <form action="/iDiscuss/partials/_handleSignup.php" method="POST">
                 <div class="modal-body">
                     <div class="mb-3">
+                        <label for="userName" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="userName" name="userName">
+                    </div>
+                    <div class="mb-3">
                         <label for="signupEmail" class="form-label">Email address</label>
                         <input type="email" class="form-control" id="signupEmail" name="signupEmail" aria-describedby="emailHelp">
-
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
@@ -27,7 +30,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Sign Up</button>
-                </div> 
+                </div>
             </form>
         </div>
     </div>
