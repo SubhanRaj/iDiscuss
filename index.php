@@ -3,7 +3,7 @@
 
 <head>
     <?php require 'partials/_head.php'; ?>
-    <title>iDiscuss</title>
+    <title>iDiscuss : A Coding Forum made in PHP</title>
 </head>
 
 <body>
