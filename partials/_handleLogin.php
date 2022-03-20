@@ -6,17 +6,10 @@ $showError = "false";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include '_dbconnect.php';
     $email = $_POST['loginEmail'];
-    $password = $_POST['loginPassword'];
-    $sql = "SELECT * FROM `users` WHERE `userEmail` = '$email';";
+    $pass  = $_POST['loginPass'];
+    $sql = "SELECT * FROM `users` WHERE `userEmail` = '$email'";
     $result = mysqli_query($conn, $sql);
-    // echo $result;
-    // Show SQL in case of error
-
-    if (!$result) {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
-
-
+    
     $numRows = mysqli_num_rows($result);
     if ($numRows == 1) {
         $row = mysqli_fetch_assoc($result);
@@ -27,17 +20,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "logged in" . $email;
             header("Location: /iDiscuss/index.php");
         }
+        else {
+            echo "Unable to login";
+        }
         
     }
-    // Show error with inserted SQl query for 10 seconds and then redirect to index.php
+    // Show error for 5 seconds and then redirect to index.php
     else {
         $showError = "true";
         header("Refresh: 5; url=/iDiscuss/index.php");
     }
     header("Location: /iDiscuss/index.php");  
 }
-// else {
-//     $showError = "Invalid username or password";
-//     echo $showError;
-// }
-?>
+else {
+    $showError = "Invalid username or password";
+    echo $showError;
+}

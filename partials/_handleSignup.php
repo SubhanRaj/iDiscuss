@@ -7,8 +7,8 @@ $showError = "false";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include '_dbconnect.php';
     $userEmail = $_POST['signupEmail'];
-    $password = $_POST['signupPassword'];
-    $cPassword = $_POST['signupcPassword'];
+    $password = $_POST['Password'];
+    $cPassword = $_POST['cPassword'];
 
     // Check whether the email is already in the database
     $existSql = "SELECT * FROM `users` WHERE userEmail = '$userEmail';";
@@ -31,12 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         } else {
             $showError = "Passwords do not match.";
-            
         }
     }
     header("Location: /iDiscuss/index.php?signupSuccess=false&error=$showError");
 }
- 
+
 
 
 ?>
