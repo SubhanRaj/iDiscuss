@@ -142,11 +142,16 @@
                         $thread_ques = $row['thread_title'];
                         $thread_desc = $row['thread_desc'];
                         $time = $row['timestamp'];
+                        $thread_user_id = $row['thread_user_id'];
+                        $sql2 = "SELECT userName from `users` WHERE sno = '$thread_user_id';";
+                        $result2 = mysqli_query($conn, $sql2);
+                        $row2 = mysqli_fetch_assoc($result2);
+                        
                         echo '
                     <div class="d-flex border p-3 my-3">
                         <img src="/iDiscuss/images/default-user.png" class="flex-shrink-0 me-3 mt-3 rounded-circle" width="64px" height="64px" alt="">
                         <div>
-                        <p class = "my-1 ">By: Subhan at ' . $time . '</hp >
+                        <p class = "my-1 ">By: '. $row2['userName'] .' at ' . $time . '</p >
                             <h5 class="mt-0"><a class = "text-dark text-decoration-none" href="/iDiscuss/thread.php?threadid=' . $id . '">' . $thread_ques . '</a></h5>
                             <p>' . $thread_desc . '</p>
                         </div>
