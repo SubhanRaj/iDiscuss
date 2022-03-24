@@ -33,7 +33,7 @@
         while ($row = mysqli_fetch_assoc($result)) {
             $noResult = false;
             $threadname = $row['thread_title'];
-            $threaddesc = $row['content'];
+            $threaddesc = $row['thread_desc'];
         }
         if ($noResult) {
             echo '
@@ -54,7 +54,8 @@
             // Insert the comment in to the database
 
             $comment = $_POST['content'];
-            $sql = "INSERT INTO `comments` (`comment_content`, `thread_id`, `comment_by`) VALUES ('$comment', '$id', '0');";
+            $sno = $_POST['sno'];
+            $sql = "INSERT INTO `comments` (`comment_content`, `thread_id`, `comment_by`) VALUES ('$comment', '$id', '$sno');";
             $result = mysqli_query($conn, $sql);
             // echo if error if $result fails
             if (!$result) {
@@ -82,27 +83,26 @@
                 <h1 class="display-5"> <?php echo $threadname; ?></h1>
                 <hr class="my-4">
                 <p class="lead"><?php echo $threaddesc; ?> </p>
-                <p><b>Posted by: </b>Subhan</p>
+                <p><b>Posted by: </b><?php echo $_SESSION['username'];?></p>
             </div>
         </div>
-
 
 
         <!-- Form for comment -->
         <div class="container my-4">
             <h1 class="py-3">Add comments</h1>
             <?php
-            if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == TRUE){
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == TRUE) {
                 echo '
-                    <form action="'.$_SERVER['REQUEST_URI'].'" method="POST">
+                    <form action="' . $_SERVER['REQUEST_URI'] . '" method="POST">
                     <div class="mb-3">
                         <label for="content">Write Your Comment</label>
                         <textarea name="content" id="content" rows="5" class="form-control"></textarea>
+                        <input type="hidden" name="sno" value="' . $_SESSION["sno"] . '">
                     </div>
                     <button type="submit" class="btn btn-success">Comment</button>
                     </form>';
-            }
-            else{
+            } else {
                 echo '
                     <p class = "lead">Please login in order to add comments  </p>
                     ';
@@ -123,7 +123,7 @@
                 $noResult = false;
                 $id = $row['comment_id'];
                 $content = $row['comment_content'];
-                $time= $row['comment_time'];
+                $time = $row['comment_time'];
                 $thread_user_id = $row['comment_by'];
                 $sql2 = "SELECT userName from `users` WHERE sno = '$thread_user_id';";
                 $result2 = mysqli_query($conn, $sql2);
@@ -133,7 +133,7 @@
                     <div class="d-flex border p-3 my-3">
                         <img src="/iDiscuss/images/default-user.png" class="flex-shrink-0 me-3 mt-3 rounded-circle" width="64px" height="64px" alt="">
                         <div>
-                        <h5 class = "my-0 ">By: ' . $row2['userName'] .' at ' . $time . '</h5>
+                        <h5 class = "my-0 ">By: ' . $row2['userName'] . ' at ' . $time . '</h5>
                             ' . $content . '
                         </div>
                      </div>

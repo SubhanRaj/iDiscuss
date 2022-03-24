@@ -16,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($pass, $row['userPass'])) {
             session_start();
             $_SESSION['loggedin'] = true;
+            $_SESSION['sno'] = $row['sno'];
             $_SESSION['username'] = $userName;
             echo "logged in" . $userName;
             header("Location: /iDiscuss/index.php");
