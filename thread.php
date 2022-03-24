@@ -33,7 +33,7 @@
         while ($row = mysqli_fetch_assoc($result)) {
             $noResult = false;
             $threadname = $row['thread_title'];
-            $threaddesc = $row['content'];
+            $threaddesc = $row['thread_desc'];
         }
         if ($noResult) {
             echo '
