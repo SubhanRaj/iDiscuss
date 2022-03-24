@@ -45,7 +45,8 @@
 
         $th_title = $_POST['thread_title'];
         $th_desc = $_POST['thread_desc'];
-        $sql = "INSERT INTO `threads` ( `thread_title`, `thread_desc`, `thread_cat_id`, `thread_user_id`) VALUES ('$th_title', '$th_desc', '$id', '0');";
+        $sno = $_POST['sno'];
+        $sql = "INSERT INTO `threads` ( `thread_title`, `thread_desc`, `thread_cat_id`, `thread_user_id`) VALUES ('$th_title', '$th_desc', '$id', '$sno');";
         $result = mysqli_query($conn, $sql);
         $showAlert = true;
         if ($showAlert) {
@@ -108,6 +109,7 @@
                         <input type="text" class="form-control" id="thread_title" name="thread_title" aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text">Keep your question short and accurate</div>
                     </div>
+                     <input type="hidden" name="sno" value="' . $_SESSION["sno"] . '">
                     <div class="mb-3">
                         <label for="thread_desc">Describe the question</label>
                         <textarea name="thread_desc" id="thread_desc" rows="10" class="form-control"></textarea>
