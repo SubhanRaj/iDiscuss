@@ -1,0 +1,35 @@
+{
+    "name": "iDiscuss : A Coding Forum",
+    "short-name": "iDiscuss",
+    "start_url": "index.php",
+    "scope": "./",
+    "icons": [{
+            "src": "icons/manifest-icon-192.maskable.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        }, {
+            "src": "icons/manifest-icon-192.maskable.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        }, {
+            "src": "icons/manifest-icon-512.maskable.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        }, {
+            "src": "icons/manifest-icon-512.maskable.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+
+    ],
+    "theme_color": "black",
+    "background_color": "black",
+    "display": "standalone"
+
+
+
+}
