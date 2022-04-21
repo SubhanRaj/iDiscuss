@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 23, 2022 at 07:08 PM
+-- Generation Time: Apr 20, 2022 at 06:29 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -69,8 +69,7 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`comment_id`, `comment_content`, `thread_id`, `comment_by`, `comment_time`) VALUES
-(1, 'hi', 1, 1, '2022-03-20 19:52:42'),
-(2, 'suoer', 2, 2, '2022-03-20 19:53:51');
+(1, ',jkhgfdg\r\n', 2, 1, '2022-03-25 03:35:00');
 
 -- --------------------------------------------------------
 
@@ -92,15 +91,8 @@ CREATE TABLE `threads` (
 --
 
 INSERT INTO `threads` (`thread_id`, `thread_title`, `thread_desc`, `thread_cat_id`, `thread_user_id`, `timestamp`) VALUES
-(1, 'hello', 'hi', 1, 1, '2022-03-21 00:43:05'),
-(2, 'hello', 'hi', 1, 0, '2022-03-21 00:43:21'),
-(3, 'js', '', 2, 2, '2022-03-21 00:45:10'),
-(4, 'so2', '', 1, 0, '2022-03-21 00:53:59'),
-(5, 'so2', '', 1, 0, '2022-03-21 00:54:21'),
-(6, 'Unable to install Mojave', 'Not on my MacBook Pro 2012', 9, 0, '2022-03-21 01:31:15'),
-(7, 'Unable to add Flutter SDK to path.', 'I am not able to do my work', 4, 0, '2022-03-21 15:49:51'),
-(8, 'Unable to add Flutter SDK to path.', 'I am not able to do my work', 4, 0, '2022-03-21 15:50:02'),
-(9, 'hi', '', 4, 0, '2022-03-21 15:52:08');
+(1, 'JS', 'Aheheerw', 2, 1, '2022-03-25 09:03:01'),
+(2, 'Hello Sir', 'hfhfgfgfgrg', 1, 1, '2022-03-25 09:04:35');
 
 -- --------------------------------------------------------
 
@@ -121,10 +113,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`sno`, `userName`, `userEmail`, `userPass`, `timestamp`) VALUES
-(1, 'masterofcosmos', 'hello@masterofcosmos.com', '$2y$10$95V8G9LC1Z8WsPulcWbJBeqmPc5gozo1dFtmIOZJ.oQWN7suqwM/.', '2022-03-21 00:17:38'),
-(2, 'xxx', 'sex@xxx.xom', '$2y$10$jT7dSiQoJZTiZo8YwaX8nuuIMQ9Otpitp/bhVkskP5cba4XGlCb1C', '2022-03-21 00:25:44'),
-(3, 'tony', 'ironman@stark.com', '$2y$10$7Lg0j9WZzTeVCmYJ3xQPweKdAuTnB.Eq717xH0wktQ8waEPy34Vmq', '2022-03-21 00:26:07'),
-(4, 'hello', 'hi@someone.com', '$2y$10$hs2ELduO2wcgc1CgqVLO1uGeV8kB1r2GsOea5aByyIi2mhMhVhrzy', '2022-03-21 00:38:49');
+(1, 'masterofcosmos', 'subhanraj@kmclu.ac.in', '$2y$10$BDsuLuUopWuY2AeIQDwTzOf8oZ63.pw56bmhgKphCdSxH9CMUdZou', '2022-03-25 08:56:28');
 
 --
 -- Indexes for dumped tables
@@ -168,19 +157,19 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `comment_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `threads`
 --
 ALTER TABLE `threads`
-  MODIFY `thread_id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `thread_id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `sno` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `sno` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

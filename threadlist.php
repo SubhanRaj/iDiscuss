@@ -56,6 +56,11 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             ';
+            echo  "<script>
+            setTimeout(function(){
+                window.location.href='threadlist.php?catid=$id';
+            },5000);
+            </script>";
         }
     }
 
